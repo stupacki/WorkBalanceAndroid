@@ -1,6 +1,6 @@
 package com.workbalance.mobile.app.injection
 
-import com.workbalance.mobile.app.navigation.tree.workweeks.WorkWeekNavigationTree
+import com.workbalance.mobile.app.navigation.tree.timetracking.TimeTrackingNavigationTree
 import com.workbalance.mobile.navigation.main.NavigationStep
 import org.koin.core.component.KoinComponent
 import org.koin.core.module.Module
@@ -19,6 +19,6 @@ internal class AppComponent : KoinComponent {
 fun appModule(): Module = module {
 
     single<List<NavigationStep>>(AppComponent.NAVIGATION_STEPS_QUALIFIER) {
-        WorkWeekNavigationTree.tree
+        TimeTrackingNavigationTree.tree
     }
 }

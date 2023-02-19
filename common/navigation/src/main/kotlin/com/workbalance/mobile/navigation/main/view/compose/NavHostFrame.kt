@@ -8,6 +8,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.workbalance.mobile.navigation.main.NavigationStep
 import com.workbalance.mobile.navigation.main.Navigator
+import com.workbalance.mobile.navigation.settings.WorkWeeks.Companion.DEST_ID_WORK_WEEKS_SCREEN
 
 @Composable
 fun MyAppNavHostFrame(
@@ -18,7 +19,7 @@ fun MyAppNavHostFrame(
     NavHost(
         modifier = modifier,
         navController = navController,
-        startDestination = navigationSteps.first { it.isStartDestination }.destination,
+        startDestination = DEST_ID_WORK_WEEKS_SCREEN,
     ) {
         val navigator: Navigator = Navigator(navController)
 

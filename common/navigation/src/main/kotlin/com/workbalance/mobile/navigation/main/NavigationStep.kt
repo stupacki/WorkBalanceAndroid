@@ -6,8 +6,6 @@ import androidx.navigation.NavBackStackEntry
 
 interface NavigationStep {
 
-    val isStartDestination: Boolean
-
     val arguments: List<NamedNavArgument>
 
     val destination: String

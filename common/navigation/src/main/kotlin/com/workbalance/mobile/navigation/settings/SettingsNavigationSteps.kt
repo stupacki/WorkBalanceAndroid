@@ -11,9 +11,6 @@ class WorkWeeks(
     override val content: @Composable (Navigator, NavBackStackEntry) -> Unit,
 ) : NavigationStep {
 
-    override val isStartDestination: Boolean
-        get() = true
-
     override val destination: String
         get() = DEST_ID_WORK_WEEKS_SCREEN
 
@@ -21,4 +18,3 @@ class WorkWeeks(
         const val DEST_ID_WORK_WEEKS_SCREEN = "workWeeksScreen"
     }
 }
-
