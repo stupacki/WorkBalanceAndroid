@@ -1,16 +1,16 @@
 ext {
     versions = [
-            activity       : '1.7.0-alpha03',
-            compose        : '1.4.0-alpha04',
-            composeCompiler: '1.4.0',
-            composeMaterial: '1.1.0-alpha04',
+            activity       : '1.7.0-beta01',
+            compose        : '1.4.0-beta01',
+            composeCompiler: '1.4.2',
+            composeMaterial: '1.1.0-alpha06',
             coroutines     : '1.6.4',
             jUnit5         : '5.9.1',
-            kotest         : '5.5.4',
+            kotest         : '5.5.5',
             leakCanary     : '2.10',
-            lifecycle      : '2.6.0-alpha04',
-            mockk          : '1.13.3',
-            navigation     : '2.6.0-alpha04',
+            lifecycle      : '2.6.0-beta01',
+            mockk          : '1.13.4',
+            navigation     : '2.6.0-alpha05',
     ]
     libraries = [
             //General
@@ -35,8 +35,8 @@ ext {
             //Third party
             leakCanary            : "com.squareup.leakcanary:leakcanary-android:$versions.leakCanary",
             timber                : 'com.jakewharton.timber:timber:5.0.1',
-            koin                  : 'io.insert-koin:koin-android:3.3.2',
-            koinCompose           : 'io.insert-koin:koin-androidx-compose:3.4.1',
+            koin                  : 'io.insert-koin:koin-android:3.3.3',
+            koinCompose           : 'io.insert-koin:koin-androidx-compose:3.4.2',
 
             //Testing
             androidXArch          : 'androidx.arch.core:core-testing:2.1.0',
