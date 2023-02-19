@@ -20,8 +20,8 @@ fun AppTheme(
     val colorScheme = when {
         useDynamicColor && useDarkTheme -> dynamicDarkColorScheme(context)
         useDynamicColor && !useDarkTheme -> dynamicLightColorScheme(context)
-        useDarkTheme -> AppColors.nightColorScheme
-        else -> AppColors.lightColorScheme
+        useDarkTheme -> AppColors.DarkColorPalette
+        else -> AppColors.LightColorPalette
     }
 
     MaterialTheme(
