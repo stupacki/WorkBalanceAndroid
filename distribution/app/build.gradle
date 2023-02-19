@@ -64,7 +64,7 @@ dependencies {
     implementation project(':common:design')
     implementation project(':common:concurrency')
     implementation project(':common:navigation')
-    implementation project(':feature:settings')
+    implementation project(':feature:workweeks')
 
     api libraries.koin
     api libraries.koinCompose

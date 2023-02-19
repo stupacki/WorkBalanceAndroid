@@ -9,4 +9,4 @@ include ':distribution:app',
         ':common:navigation',
 
 //Feature
-        ':feature:settings'
+        ':feature:workweeks'
