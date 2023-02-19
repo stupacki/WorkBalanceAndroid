@@ -1,4 +1,4 @@
-rootProject.name = "FestivalFellow"
+rootProject.name = "WorkBalance"
 
 //Distribution
 include ':distribution:app',

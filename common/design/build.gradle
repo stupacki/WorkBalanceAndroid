@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace 'com.festivalfellow.mobile.design'
+    namespace 'com.workbalance.mobile.design'
     compileSdk globalTargetSdk
 
     sourceSets {

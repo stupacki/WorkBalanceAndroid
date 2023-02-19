@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace 'com.festivalfellow.mobile.navigation'
+    namespace 'com.workbalance.mobile.navigation'
     compileSdk globalTargetSdk
 
     sourceSets {

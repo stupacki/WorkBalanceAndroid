@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace 'com.festivalfellow.mobile.app.settings'
+    namespace 'com.workbalance.mobile.app.settings'
     compileSdk globalTargetSdk
 
     sourceSets {

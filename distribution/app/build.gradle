@@ -10,7 +10,7 @@ android {
     def versionPatch = 0
     def versionExtra = 'alpha01'
 
-    namespace 'com.festivalfellow.mobile.app'
+    namespace 'com.workbalance.mobile.app'
     compileSdk globalTargetSdk
 
     sourceSets {
@@ -19,7 +19,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.festivalfellow.mobile"
+        applicationId "com.workbalance.mobile"
         minSdk globalMinSdk
         targetSdk globalTargetSdk
         versionCode generateVersionCodeFromCommitCount()
