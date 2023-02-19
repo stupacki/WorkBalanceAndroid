@@ -1,0 +1,79 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+
+    def versionMajor = 0
+    def versionMinor = 1
+    def versionPatch = 0
+    def versionExtra = 'alpha01'
+
+    namespace 'com.festivalfellow.mobile.app'
+    compileSdk globalTargetSdk
+
+    sourceSets {
+        main.java.srcDirs += 'src/main/kotlin'
+        test.java.srcDirs += 'src/test/kotlin'
+    }
+
+    defaultConfig {
+        applicationId "com.festivalfellow.mobile"
+        minSdk globalMinSdk
+        targetSdk globalTargetSdk
+        versionCode generateVersionCodeFromCommitCount()
+        versionName "$versionMajor.$versionMinor.$versionPatch-$versionExtra"
+        multiDexEnabled true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_11
+        freeCompilerArgs = ["-opt-in=kotlin.RequiresOptIn"]
+    }
+
+    buildFeatures {
+        compose true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion versions.composeCompiler
+    }
+
+    testOptions {
+        unitTests.all {
+            useJUnitPlatform()
+        }
+    }
+}
+
+dependencies {
+
+    implementation project(':common:design')
+    implementation project(':common:concurrency')
+    implementation project(':common:navigation')
+    implementation project(':feature:settings')
+
+    api libraries.koin
+    api libraries.koinCompose
+
+    implementation libraries.kotlinStd
+}
+
+static def generateVersionCodeFromCommitCount() {
+    def result = "git rev-list --count HEAD".execute().text.trim()
+    if (result.empty) throw new RuntimeException("Could not generate versioncode. Reason: ${result.text}")
+    return result.toInteger()
+}

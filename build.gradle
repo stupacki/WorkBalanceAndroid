@@ -1,0 +1,36 @@
+buildscript {
+    ext {
+        kotlinVersion = '1.8.0'
+    }
+
+    repositories {
+        google()
+        mavenCentral()
+        maven { url = 'https://plugins.gradle.org/m2/' }
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.4.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+        classpath 'com.github.ben-manes:gradle-versions-plugin:0.44.0'
+    }
+}
+
+apply from: "params.gradle"
+apply from: "dependencies.gradle"
+
+allprojects {
+    apply plugin: 'com.github.ben-manes.versions'
+
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+    subprojects.forEach() { project ->
+        delete project.buildDir
+    }
+}

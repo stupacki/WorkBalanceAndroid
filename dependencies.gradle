@@ -1,0 +1,53 @@
+ext {
+    versions = [
+            activity       : '1.7.0-alpha03',
+            compose        : '1.4.0-alpha04',
+            composeCompiler: '1.4.0',
+            composeMaterial: '1.1.0-alpha04',
+            coroutines     : '1.6.4',
+            jUnit5         : '5.9.1',
+            kotest         : '5.5.4',
+            leakCanary     : '2.10',
+            lifecycle      : '2.6.0-alpha04',
+            mockk          : '1.13.3',
+            navigation     : '2.6.0-alpha04',
+    ]
+    libraries = [
+            //General
+            coroutinesCore        : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$versions.coroutines",
+            coroutinesAndroid     : "org.jetbrains.kotlinx:kotlinx-coroutines-android:$versions.coroutines",
+            kotlinStd             : "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion",
+
+            //Android
+            compose               : "androidx.compose.ui:ui:$versions.compose",
+            composeRuntime        : "androidx.compose.runtime:runtime:$versions.compose",
+            composeTooling        : "androidx.compose.ui:ui-tooling:$versions.compose",
+            composePreview        : "androidx.compose.ui:ui-tooling-preview:$versions.compose",
+            composeMaterial3      : "androidx.compose.material3:material3:$versions.composeMaterial",
+            composeMaterial3Window: "androidx.compose.material3:material3-window-size-class:$versions.composeMaterial",
+            composeActivity       : "androidx.activity:activity-compose:$versions.activity",
+            composeViewModel      : "androidx.lifecycle:lifecycle-viewmodel-compose:$versions.lifecycle",
+            navigationCompose     : "androidx.navigation:navigation-compose:$versions.navigation",
+
+            //Google
+            accompanistDrawable   : "com.google.accompanist:accompanist-drawablepainter:$versions.accompanist",
+
+            //Third party
+            leakCanary            : "com.squareup.leakcanary:leakcanary-android:$versions.leakCanary",
+            timber                : 'com.jakewharton.timber:timber:5.0.1',
+            koin                  : 'io.insert-koin:koin-android:3.3.2',
+            koinCompose           : 'io.insert-koin:koin-androidx-compose:3.4.1',
+
+            //Testing
+            androidXArch          : 'androidx.arch.core:core-testing:2.1.0',
+            coroutinesTest        : "org.jetbrains.kotlinx:kotlinx-coroutines-test:$versions.coroutines",
+            jUnit5                : "org.junit.jupiter:junit-jupiter-api:$versions.jUnit5",
+            jUnit5Engine          : "org.junit.jupiter:junit-jupiter-engine:$versions.jUnit5",
+            kotest                : "io.kotest:kotest-runner-junit5:$versions.kotest",
+            kotestEngine          : "io.kotest:kotest-framework-engine-jvm:$versions.kotest",
+            kotestAssertions      : "io.kotest:kotest-assertions-core:$versions.kotest",
+            kotestProperties      : "io.kotest:kotest-property:$versions.kotest",
+            mockk                 : "io.mockk:mockk:$versions.mockk",
+            mockkAgent            : "io.mockk:mockk-agent-jvm:$versions.mockk",
+    ]
+}

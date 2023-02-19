@@ -1,0 +1,41 @@
+plugins {
+    id 'java-library'
+    id 'kotlin'
+    id 'org.jetbrains.kotlin.jvm'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
+
+compileKotlin {
+    kotlinOptions {
+        sourceSets {
+            main.java.srcDirs += 'src/main/kotlin'
+            test.java.srcDirs += 'src/test/kotlin'
+        }
+
+        freeCompilerArgs = ['-opt-in=kotlin.RequiresOptIn']
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation libraries.kotlinStd
+    api libraries.coroutinesCore
+    api libraries.coroutinesAndroid
+
+    testImplementation libraries.mockk
+    implementation libraries.mockkAgent
+    testImplementation libraries.kotest
+    testImplementation libraries.kotestEngine
+    testImplementation libraries.kotestAssertions
+    testImplementation libraries.kotestProperties
+    testImplementation libraries.coroutinesTest
+}
